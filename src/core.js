@@ -1,6 +1,6 @@
 // core.js: constants, helpers, paper, paint wrapper, compositing and render hooks.
 // Length and rhythm come from PROJECT in config.js.
-const W = 1920, H = 1080;
+const W = PROJECT.w || 1920, H = PROJECT.h || 1080;   // a 16:9 film by default; a vertical one sets PROJECT.w/h
 const BPM = PROJECT.bpm, BEAT = 60 / BPM, OFF = PROJECT.offset || 0, BOIL = 12, DUR = PROJECT.duration;
 const TAU = Math.PI * 2;
 const PAL = {
@@ -399,6 +399,7 @@ async function setup() {
   await document.fonts.load('100px "Permanent Marker"');
   await document.fonts.load('100px "Caveat"'); await document.fonts.load('100px "Caveat"', 'abcR.M');
   await document.fonts.load('100px "DejaVu Serif"');
+  await document.fonts.load('100px "Tiro Devanagari Hindi"', "छठ आस्था जो पीढ़ियों से बहती है");
   window.ready = true;
   if (!location.search.includes('render')) devUI();
 }

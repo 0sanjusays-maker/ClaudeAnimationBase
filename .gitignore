@@ -1,2 +1,5 @@
 node_modules
 out/
+# rendered frames stay out of git (they are reproducible with one command); the MP4s and docs are committed
+out/frames/
+out/chhath_frames/

@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+/* Latin hands for the lettering, Devanagari (Tiro) for the Hindi title — both self-hosted, nothing off a CDN. */
+@font-face{font-family:"Caveat";src:url(fonts/caveat-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:block}
+@font-face{font-family:"Caveat";src:url(fonts/caveat-latin-700-normal.woff2) format("woff2");font-weight:700;font-display:block}
+@font-face{font-family:"Permanent Marker";src:url(fonts/permanent-marker-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:block}
+@font-face{font-family:"DejaVu Serif";src:url(file:///usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf) format("truetype");font-weight:400;font-display:block}
+@font-face{font-family:"Tiro Devanagari Hindi";src:url(fonts/tiro-devanagari-hindi-devanagari-400-normal.woff2) format("woff2");font-weight:400;font-display:block}
+@font-face{font-family:"Noto Serif Devanagari";src:url(fonts/noto-serif-devanagari-devanagari-400-normal.woff2) format("woff2");font-weight:400;font-display:block}
+</style>
+<title>PEHLA CHHATH — studio</title>
+<style>
+  html, body { margin: 0; background: #1b1820; color: #eee; font: 13px system-ui, sans-serif; }
+  main { padding: 12px; display: grid; gap: 8px; justify-items: center; }
+  #out { height: min(88vh, 1200px); width: auto; aspect-ratio: 9 / 16; background: #F6EBD8; }
+  .p5Canvas { display: none !important; }
+  .bar { display: flex; gap: 10px; align-items: center; width: min(96vw, 560px); }
+  #scrub { flex: 1; }
+  #tt { font-variant-numeric: tabular-nums; min-width: 150px; }
+</style>
+<script src="node_modules/p5/lib/p5.min.js"></script>
+<script src="node_modules/p5.brush/dist/p5.brush.js"></script>
+</head>
+<body>
+<main>
+  <canvas id="out" width="1080" height="1920"></canvas>
+  <div class="bar"><input id="scrub" type="range" min="0" max="75" step="0.0417" value="0"><span id="tt">loading…</span></div>
+</main>
+<!-- engine (shared with THE LAST BENCH; the size and length come from config_chhath.js) -->
+<script src="src/config_chhath.js"></script>
+<script src="src/core.js"></script>
+<script src="src/clawd.js"></script>
+<script src="src/timeline.js"></script>
+<script src="src/handwriting.js"></script>
+<script src="src/sheets.js"></script>
+<!-- the film -->
+<script src="src/scenes/chhath.js"></script>
+</body>
+</html>
